@@ -43,7 +43,7 @@ class Makeup::CLI
   end
 
   def show_makeup_info
-    Bestsellers::Scraper.scrape_top_makeup.each.with_index(1) do |item, i|
+    Makeup::Scraper.scrape_top_makeup.each.with_index(1) do |item, i|
       puts "#{i}. Name: #{item.name}
       Description: #{item.description}
       Price: #{item.price} "
@@ -54,7 +54,7 @@ class Makeup::CLI
 
   def display_makeup_url
     input = gets.strip
-    collection_of_makeup = Bestsellers::Scraper.scrape_top_makeup
+    collection_of_makeup = Makeup::Scraper.scrape_top_makeup
       if input.to_i <= collection_of_makeup.length
         puts "Url: https://www.ulta.com/#{collection_of_makeup[input.to_i-1].url}"
       elsif
@@ -62,9 +62,8 @@ class Makeup::CLI
       end
     end
 
-
     def show_skincare_info
-      Bestsellers::Scraper.scrape_top_skincare.each.with_index(1) do |item, i|
+      Makeup::Scraper.scrape_top_skincare.each.with_index(1) do |item, i|
         puts "#{i}. Name: #{item.name}
         Description: #{item.description}
         Price: #{item.price} "
@@ -74,12 +73,13 @@ class Makeup::CLI
 
     def display_skincare_url
       input = gets.strip
-      collection_of_skincare = Bestsellers::Scraper.scrape_top_skincare
+      collection_of_skincare = Makeup::Scraper.scrape_top_skincare
         if input.to_i <= collection_of_skincare.length
           puts "Url: https://www.ulta.com/#{collection_of_skincare[input.to_i-1].url}"
         elsif
           show_skincare_info
         end
     end
+
 
   end
