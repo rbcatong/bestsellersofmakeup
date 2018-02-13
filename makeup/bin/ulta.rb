@@ -1,3 +1,3 @@
-require_relative '../lib/bestsellers'
+require_relative '../lib/makeup'
 
-Bestsellers::CLI.new.call
+Makeup::CLI.new.call
