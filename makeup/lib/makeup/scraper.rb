@@ -2,7 +2,7 @@ require 'nokogiri'
 require 'open-uri'
 require 'pry'
 
-class Bestsellers::Scraper
+class Makeup::Scraper
 
   def self.scrape_top_makeup
     makeup_collection = []

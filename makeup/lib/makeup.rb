@@ -1,5 +1,3 @@
-require "makeup/version"
-
 require 'pry'
 
 require_relative './makeup/version'
